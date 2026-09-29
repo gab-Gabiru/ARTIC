@@ -1,0 +1,30 @@
+ARTIC LOCALHOST SETUP
+=====================
+
+1. Start PHP/Apache using the PHP installation that has PDO_SQLSRV enabled.
+2. Open:
+   http://localhost/Artic_MSSQL_Reliable_Fixed/setup.php
+   or, with the built-in server:
+   http://localhost:8000/setup.php
+3. Start with these local settings:
+   Server:   localhost\SQLEXPRESS03
+   Database: artic
+   User:     sa
+4. Enter the SQL Server password, or select Windows Authentication.
+5. Click Test Connection. The result shows the actual SQL Server/profile used.
+6. Click Save + Install / Repair Database.
+7. Open health.php and make sure ready is true.
+8. Open index.php.
+
+If setup.php says PDO_SQLSRV is not enabled, the PHP runtime serving localhost
+cannot connect to Microsoft SQL Server yet. Enable the Microsoft SQL Server
+PDO driver in that PHP installation, restart Apache/PHP, and reload setup.php.
+
+Do NOT open index.php using Live Server, file://, or another static web server.
+The application must be served by PHP so its API endpoints can execute.
+
+PROFILE UPDATE
+- Account now supports display name, bio, and profile picture (JPG/PNG/GIF/WEBP).
+- Artist public profiles show commission tiers and portfolio items.
+- Opening a commission displays the assigned artist's profile and portfolio.
+- Run REPAIR_EXISTING_ARTIC_DB.sql / setup.php after updating an existing database so the four profile-image columns are added to dbo.users.

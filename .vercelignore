@@ -1,0 +1,11 @@
+.git
+.gitignore
+START_HERE.bat
+start_artic.bat
+diagnose_artic.bat
+LOCALHOST_SETUP.txt
+README_START_HERE.txt
+docs/
+REPAIR_REPORT.md
+README_MSSQL_FIX.md
+MSSQL_LOGIN_ERROR.md

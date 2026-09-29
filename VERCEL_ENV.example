@@ -1,0 +1,23 @@
+# REQUIRED: external SQL Server reachable from the public internet.
+# Do NOT use localhost\SQLEXPRESS03 on Vercel.
+ARTIC_DB_SERVER=tcp:YOUR_SQL_SERVER_HOSTNAME
+ARTIC_DB_PORT=1433
+ARTIC_DB_NAME=artic
+ARTIC_DB_USER=YOUR_SQL_USERNAME
+ARTIC_DB_PASS=YOUR_SQL_PASSWORD
+ARTIC_DB_TRUSTED_CONNECTION=false
+ARTIC_DB_ENCRYPT=true
+ARTIC_DB_TRUST_SERVER_CERTIFICATE=false
+ARTIC_DB_LOGIN_TIMEOUT=8
+ARTIC_DB_ALLOW_WINDOWS_FALLBACK=false
+
+# Recommended in the future for durable uploads.
+# Create a Vercel Blob store separately; this existing PHP upload layer still
+# writes to the container filesystem, which is ephemeral on Vercel.
+# BLOB_READ_WRITE_TOKEN=...
+
+# PayPal Checkout (sandbox for testing; keep secret out of Git)
+PAYPAL_MODE=sandbox
+PAYPAL_CLIENT_ID=your_paypal_sandbox_client_id
+PAYPAL_CLIENT_SECRET=your_paypal_sandbox_client_secret
+PAYPAL_CURRENCY=USD
